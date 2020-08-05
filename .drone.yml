@@ -1,6 +1,8 @@
 kind: pipline
-type: docker
 name: default
+type: kubernetes
+node_selector:
+  drone: true
 
 steps:
 - name: greeting
