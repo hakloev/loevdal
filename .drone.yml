@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: greeting
-  image: alpine
+  image: alpine:3.12.0
   commands:
   - echo hello
   - echo world
