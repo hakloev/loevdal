@@ -42,7 +42,7 @@ steps:
       - docker-compose up -d -t 600
       - docker image prune -f
       - docker-compose ps
-   when:
+  when:
     branch:
     - master
     event:
