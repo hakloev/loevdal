@@ -5,13 +5,23 @@ node_selector:
   drone: true
 
 steps:
-- name: greeting
-  image: alpine:3.12.0
-  commands:
-  - echo hello
-  - echo world
+- name: loevdal
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: hakloev/loevdal
+    auto_tag: true
+    cache_from:
+      - hakloev/loevdal:latest
   when:
     branch:
     - master
     event:
     - push
+  volumes:
+    - name: docker-socker
+      host:
+        path: /var/run/docker.sock:/var/run/docker.sock
