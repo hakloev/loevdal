@@ -25,3 +25,25 @@ steps:
     - name: docker-socker
       host:
         path: /var/run/docker.sock:/var/run/docker.sock
+
+- name:
+  image: appleboy/drone-ssh
+  settings:
+    host: loevdal.no
+    port: 22
+    username: root
+    key:
+      from_secret: ssh_key
+    command_timeout: 600s
+    script:
+      - cd /opt/containers/loevdal
+      - docker-compose pull
+      - docker-compose down
+      - docker-compose up -d -t 600
+      - docker image prune -f
+      - docker-compose ps
+   when:
+    branch:
+    - master
+    event:
+    - push
