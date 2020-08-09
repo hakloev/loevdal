@@ -26,7 +26,7 @@ steps:
       host:
         path: /var/run/docker.sock:/var/run/docker.sock
 
-- name:
+- name: deploy
   image: appleboy/drone-ssh
   settings:
     host: loevdal.no
