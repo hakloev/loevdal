@@ -5,6 +5,28 @@ node_selector:
   drone: true
 
 steps:
+- name: loevdal-static
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: hakloev/loevdal-static
+    dockerfile: Static.Dockerfile
+    auto_tag: true
+    cache_from:
+      - hakloev/loevdal-static:latest
+  when:
+    branch:
+      - master
+    event:
+      - push
+  volumes:
+    - name: docker-socker
+      host:
+        path: /var/run/docker.sock:/var/run/docker.sock
+
 - name: loevdal
   image: plugins/docker
   settings:
@@ -13,6 +35,7 @@ steps:
     password:
       from_secret: docker_password
     repo: hakloev/loevdal
+    dockerfile: Django.Dockerfile
     auto_tag: true
     cache_from:
       - hakloev/loevdal:latest

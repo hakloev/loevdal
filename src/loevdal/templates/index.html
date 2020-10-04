@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="app-root">
+        <p>If you see this, React hasn't done it's job properly 😥</p>
+    </div>
+    <script src="{% static 'public/main.js' %}" type="application/javascript"></script>
+{% endblock %}

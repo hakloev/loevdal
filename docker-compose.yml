@@ -1,0 +1,16 @@
+version: '3'
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: 'Static.Dockerfile'
+        depends_on:
+            - django
+        ports:
+            - '80:80'
+    django:
+        build:
+            context: .
+            dockerfile: 'Django.Dockerfile'
+        expose:
+            - 8080
