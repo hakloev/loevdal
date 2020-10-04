@@ -7,6 +7,6 @@
 python manage.py migrate --no-input
 
 # Start the application socket
-#daphne -p 8080 loevdal.asgi:application
-daphne -b 0.0.0.0 -p 8080 loevdal.asgi:application
+daphne -p 8080 loevdal.asgi:application
+#daphne -b 0.0.0.0 -p 8080 loevdal.asgi:application
 
