@@ -4,8 +4,7 @@
 
 ### Usage
 
-A local `.env` file is used to set the required environment variables.  
-`docker-compose.yml` contains an example container composition, and can be used for development together with `npm run start:dev`  
+A local `.env` file is used to set the required environment variables. `docker-compose.yml` contains an example container composition, and can be used for development together with `npm run start:dev`  
 
 ### Files
 
