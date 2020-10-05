@@ -8,8 +8,8 @@ A local `.env` file is used to set the required environment variables. `docker-c
 
 ### Files
 
-`Static.Dockerfile`: nginx container used to serve Django's static files and React bundles.
-`Django.Dockerfile`: The Django application
+- `Static.Dockerfile`: nginx container used to serve Django's static files and React bundles.
+- `Django.Dockerfile`: The Django application
 
 ### __Useful commands__:
 
