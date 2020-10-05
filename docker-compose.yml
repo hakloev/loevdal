@@ -12,5 +12,7 @@ services:
         build:
             context: .
             dockerfile: 'Django.Dockerfile'
+        env_file:
+          - .env
         expose:
             - 8080
