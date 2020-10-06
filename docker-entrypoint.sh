@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Give PostgreSQL a few extra seconds to get ready
-#sleep 6
+sleep 6
 
 # Migrate database
 python manage.py migrate --no-input
