@@ -1,10 +1,10 @@
 # Build React
 FROM node:14.7.0-alpine3.10 as react_static_builder
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY src/loevdal/src ./
+COPY react ./react
 COPY webpack.config.js webpack.production.js ./
-COPY package.json .
+COPY package.json ./
+ENV PATH /app/node_modules/.bin:$PATH
 RUN yarn && yarn build:prod
 
 

@@ -17,8 +17,5 @@ module.exports = {
     output: {
         ...config.output,
         path: path.resolve(__dirname, 'bundle'),
-    },
-    entry: [
-        path.resolve(__dirname, 'index.js')
-    ],
+    }
 }

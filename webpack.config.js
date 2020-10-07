@@ -2,25 +2,19 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: [
-        path.resolve(__dirname, 'src/loevdal/src/index.js')
-    ],
+    entry: {
+        cv: path.resolve(__dirname, 'react/cv/index.js')
+    },
     output: {
         path: path.resolve(__dirname, 'src/loevdal/static/public/'),
-
-        // 127.0.0.1/static/frontend/public/ where files are served from
-        publicPath: '/static/loevdal/public/', // Django's static path
-        filename: 'main.js',  // the same one we import in index.html
+        publicPath: '/static/public/', // Django's static path
+        filename: '[name].js',  // the same one we import in index.html
     },
     module: {
-        // configuration regarding modules
         rules: [
             {
-                // regex test for js and jsx files
-                test: /\.(js|jsx|mjs)?$/,
-                // don't look in any node_modules/  folders
+                test: /\.(js|jsx)?$/,
                 exclude:  /(node_modules)/,
-                // for matching files, use the babel-loader
                 use: {
                     loader: "babel-loader",
                     options: {presets: ["@babel/env", "@babel/preset-react"]}
