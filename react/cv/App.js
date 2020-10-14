@@ -5,7 +5,7 @@ export default function App() {
 
     return (
         <div>
-            <p style={ { color: 'red' } }>This is from React! - { count }</p>
+            <p style={ { color: 'green' } }>This is from React! - { count }</p>
             <button onClick={ () => setCount(count + 1) }>
                 Increase count here
             </button>
