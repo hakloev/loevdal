@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <title>loevdal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 <body>
-    <p>loevdal.no - testing...</p>
+    {% include 'header.html' %}
     {% block content %}{% endblock %} <!-- content -->
-    {% include "footer.html" %}
+    {% include 'footer.html' %}
 </body>
 </html>
