@@ -138,10 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = []
-
-if DEBUG:
-    STATICFILES_DIRS = STATICFILES_DIRS + [
-        os.path.join(BASE_DIR, 'loevdal', 'static')  # No content when not in dev atm...
-    ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'loevdal', 'static')
+]
 
