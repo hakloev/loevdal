@@ -4,7 +4,7 @@ WORKDIR /app
 COPY frontend ./frontend
 WORKDIR frontend
 ENV PATH /app/node_modules/.bin:$PATH
-RUN npm run build
+RUN npm install && npm run build
 
 
 # Collect Django static files
