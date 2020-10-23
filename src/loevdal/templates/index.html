@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block vuestyles %}
+    {% if not debug %}
+        <link href="{% static 'vue/css/app.css' %}" rel="stylesheet">
+    {% endif %}
+{% endblock %}
+
 {% block content %}
-    <section>
-        <p>This webpage is under development...</p>
-    </section>
-    <p></p>
-{#    <div id="app-root">#}
-{#        <p>If you see this, React hasn't done it's job properly 😥</p>#}
-{#    </div>#}
-    <script src="{% static 'public/cv.js' %}" type="application/javascript"></script>
+    <div id="app">
+        <p>If you see this, Vue hasn't done it's job properly 😥</p>
+    </div>
+    {# Vue JS #}
+    <script src="{% static 'vue/js/chunk-vendors.js' %}" type="application/javascript"></script>
+    <script src="{% static 'vue/js/app.js' %}" type="application/javascript"></script>
+    {# Vue JS - End #}
 {% endblock %}

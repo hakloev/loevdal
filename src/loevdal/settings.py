@@ -32,6 +32,10 @@ ALLOWED_HOSTS = config(
     default='loevdal.no'
 )
 
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
+
 # Application definition
 
 

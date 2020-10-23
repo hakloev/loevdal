@@ -1,11 +1,10 @@
-# Build React
-FROM node:14.7.0-alpine3.10 as react_static_builder
+# Build Vue
+FROM node:14.7.0-alpine3.10 as frontend_static_builder
 WORKDIR /app
-COPY react ./react
-COPY webpack.config.js webpack.production.js ./
-COPY package.json ./
+COPY frontend ./frontend
+WORKDIR frontend
 ENV PATH /app/node_modules/.bin:$PATH
-RUN yarn && yarn build:prod
+RUN npm run build
 
 
 # Collect Django static files
@@ -23,7 +22,7 @@ RUN python manage.py collectstatic --no-input
 # Serve static files with nginx
 FROM nginx:1.19.2-alpine
 COPY --from=django_static_builder /app/static/ /var/www/html/static
-COPY --from=react_static_builder /app/bundle/ /var/www/html/static/public
+COPY --from=frontend_static_builder /app/bundle/ /var/www/html/static/vue
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/conf.d
 RUN chown -R nginx:nginx /var/www/html
