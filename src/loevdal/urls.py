@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from loevdal.views import FrontPageView
+from loevdal.views import FrontPageView, TestPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', FrontPageView.as_view(), name='index'),
+    path('test/', TestPageView.as_view(), name='test'),
 ]

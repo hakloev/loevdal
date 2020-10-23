@@ -3,7 +3,7 @@
 
 {% block vuestyles %}
     {% if not debug %}
-        <link href="{% static 'vue/css/index.css' %}" rel="stylesheet">
+        <link href="{% static 'vue/css/test.css' %}" rel="stylesheet">
     {% endif %}
 {% endblock %}
 
@@ -13,6 +13,6 @@
     </div>
     {# Vue JS #}
     <script src="{% static 'vue/js/chunk-vendors.js' %}" type="application/javascript"></script>
-    <script src="{% static 'vue/js/index.js' %}" type="application/javascript"></script>
+    <script src="{% static 'vue/js/test.js' %}" type="application/javascript"></script>
     {# Vue JS - End #}
 {% endblock %}
